@@ -38,6 +38,16 @@ body {
   transform: scale(1.05);
 }
 
+h1 {
+  padding: 2rem;
+  font-family: "Titillium Web";
+  color: white;
+}
+
+.Header h2 {
+  color: white;
+}
+
 h2 {
   padding-bottom: 2rem;
   font-family: "Titillium Web";
