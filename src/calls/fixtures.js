@@ -15,7 +15,7 @@ import jsonframe from "jsonframe-cheerio";
 async function getMatchInfo() {
   try {
     const response = await fetch(
-      "http://localhost:8080/https://www.goal.com/tr/canl%C4%B1-skorlar"
+      "http://cors-anywhere.herokuapp.com/https://www.goal.com/tr/canl%C4%B1-skorlar"
     );
 
     const text = await response.text();

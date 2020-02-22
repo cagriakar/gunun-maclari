@@ -1,17 +1,12 @@
-const path = require("path");
-const express = require("express");
-const app = express();
-const publicPath = path.join(__dirname, "..", "public");
-
 const cors_proxy = require("cors-anywhere");
 // const request = require("request");
 // const cheerio = require("cheerio");
 // const jsonframe = require("jsonframe-cheerio");
 
 // Listen on a specific host via the HOST environment variable
-const host = process.env.HOST || "0.0.0.0";
+const host = process.env.HOST || "cors-anywhere.herokuapp.com";
 // Listen on a specific port via the PORT environment variable
-const portie = process.env.PORT || 8080;
+const port = process.env.PORT || 8080;
 
 cors_proxy
   .createServer({
@@ -19,19 +14,12 @@ cors_proxy
     requireHeader: ["origin", "x-requested-with"],
     removeHeaders: ["cookie", "cookie2"]
   })
-  .listen(portie, host, function() {
-    console.log("Running CORS Anywhere on " + host + ":" + portie);
+  .listen(port, host, function() {
+    console.log("Running CORS Anywhere on " + host + ":" + port);
   });
 
-const port = process.env.PORT || 3000;
-app.use(express.static(publicPath));
-
-app.get("*", (req, res) => {
-  res.sendFile(path.join(publicPath, "index.html"));
-});
-app.listen(port, () => {
-  console.log("Server is up!");
-});
+// const express = require("express");
+// const app = express();
 // app.use((req, res, next) => {
 //   res.header("Access-Control-Allow-Origin", "*");
 //   next();
