@@ -1,21 +1,10 @@
 import { load } from "cheerio";
 import jsonframe from "jsonframe-cheerio";
-// import axios from "axios";
-
-// async function getMatchInfoWithAxios() {
-//   try {
-//     const res = await axios.get("http://localhost:5000/jokes/random");
-//     const { data } = res;
-//     return data;
-//   } catch (error) {
-//     console.log(error);
-//   }
-// }
 
 async function getMatchInfo() {
   try {
     const response = await fetch(
-      "http://cors-anywhere.herokuapp.com/https://www.goal.com/tr/canl%C4%B1-skorlar"
+      "https://cors-anywhere.herokuapp.com/https://www.goal.com/tr/canl%C4%B1-skorlar"
     );
 
     const text = await response.text();
