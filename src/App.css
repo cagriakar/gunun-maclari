@@ -6,11 +6,13 @@
 body {
   background-color: #1cc413;
   background-image: url("https://www.transparenttextures.com/patterns/football-no-lines.png");
+  min-height: 100vw;
 }
 
 .App {
   background-color: #1cc413;
   background-image: url("https://www.transparenttextures.com/patterns/football-no-lines.png");
+  min-height: 100vw;
 }
 
 .leagues-container {

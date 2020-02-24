@@ -4,13 +4,16 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import "./App.css";
 import FixtureProvider from "./data/FixtureContext";
+import LoadingProvider from "./data/LoadingContext";
 
 function App() {
   return (
     <div className="App">
       <Header></Header>
       <FixtureProvider>
-        <LeagueContainer></LeagueContainer>
+        <LoadingProvider>
+          <LeagueContainer></LeagueContainer>
+        </LoadingProvider>
       </FixtureProvider>
       <Footer></Footer>
     </div>

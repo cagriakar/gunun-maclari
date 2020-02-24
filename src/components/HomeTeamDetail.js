@@ -1,6 +1,6 @@
 import React from "react";
 
-function HomeTeamDetail({ info }) {
+function HomeTeamDetail({ control, info }) {
   return (
     <>
       <div className="team">
@@ -9,7 +9,7 @@ function HomeTeamDetail({ info }) {
           <p>{info.name}</p>
         </div>
       </div>
-      <p className="score">{info.score}</p>
+      {control.databind !== undefined && <p className="score">{info.score}</p>}
     </>
   );
 }

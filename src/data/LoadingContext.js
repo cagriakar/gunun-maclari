@@ -2,10 +2,10 @@ import React, { useState, useEffect, useRef, createContext } from "react";
 import { getMatchInfo } from "../calls/fixtures";
 // import { getMatchInfoWithAxios } from "../calls/fixtures";
 
-const FixtureContext = createContext();
+const LoadingContext = createContext();
 
-function FixtureProvider(props) {
-  const [fixture, setFixture] = useState([]);
+function LoadingProvider(props) {
+  const [loading, setLoading] = useState(true);
 
   const componentIsMounted = useRef(true);
 
@@ -13,7 +13,7 @@ function FixtureProvider(props) {
     getMatchInfo()
       .then(response => {
         if (componentIsMounted.current) {
-          setFixture(response);
+          setLoading(false);
         }
       })
       .catch(err => {
@@ -26,12 +26,12 @@ function FixtureProvider(props) {
 
   return (
     <>
-      <FixtureContext.Provider value={[fixture, setFixture]}>
+      <LoadingContext.Provider value={[loading, setLoading]}>
         {props.children}
-      </FixtureContext.Provider>
+      </LoadingContext.Provider>
     </>
   );
 }
 
-export default FixtureProvider;
-export { FixtureContext };
+export default LoadingProvider;
+export { LoadingContext };

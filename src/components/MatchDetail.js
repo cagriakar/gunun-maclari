@@ -5,9 +5,9 @@ import AwayTeamDetail from "./AwayTeamDetail";
 function MatchDetail({ match }) {
   return (
     <div className="match-detail">
-      <HomeTeamDetail info={match.homeTeam}></HomeTeamDetail>
+      <HomeTeamDetail control={match} info={match.homeTeam}></HomeTeamDetail>
       <p>-</p>
-      <AwayTeamDetail info={match.awayTeam}></AwayTeamDetail>
+      <AwayTeamDetail control={match} info={match.awayTeam}></AwayTeamDetail>
     </div>
   );
 }
