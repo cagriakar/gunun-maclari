@@ -11,8 +11,6 @@ function LeagueContainer() {
   const [fixture, setFixture] = useContext(FixtureContext);
   // eslint-disable-next-line no-unused-vars
   const [loading, setLoading] = useContext(LoadingContext);
-  console.log(loading);
-  console.log(fixture);
 
   const today = new Date();
   const filtered = fixture.filter(item =>

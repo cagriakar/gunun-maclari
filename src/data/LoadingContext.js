@@ -13,7 +13,7 @@ function LoadingProvider(props) {
     getMatchInfo()
       .then(response => {
         if (componentIsMounted.current) {
-          setLoading(false);
+          setTimeout(() => setLoading(false), 4000);
         }
       })
       .catch(err => {
