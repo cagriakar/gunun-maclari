@@ -14,7 +14,6 @@ function FixtureProvider(props) {
       .then(response => {
         if (componentIsMounted.current) {
           setFixture(response);
-          console.log(response);
         }
       })
       .catch(err => {

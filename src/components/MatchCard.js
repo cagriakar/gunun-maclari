@@ -1,24 +1,14 @@
-import React, { useContext } from "react";
+import React from "react";
 import MatchDetail from "./MatchDetail";
-import { FixtureContext } from "../data/FixtureContext";
 
-function MatchCard(props) {
-  console.log(props);
-  const [fixture, setFixture] = useContext(FixtureContext);
-
+function MatchCard({ match }) {
   return (
     <div className="match-row">
-      {fixture.map(league =>
-        league.matches.map(info => {
-          return (
-            <div>
-              <p>{info.hour}</p>
-              <MatchDetail></MatchDetail>
-            </div>
-          );
-        })
-      )}
-      ;
+      <p className="match-hour">
+        {match.databind === undefined ? match.hour : match.databind}
+      </p>
+      <MatchDetail match={match}></MatchDetail>
+      <p className="match-additionalinfo">{match.additionalInfo}</p>
     </div>
   );
 }

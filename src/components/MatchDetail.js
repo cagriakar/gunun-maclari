@@ -1,17 +1,13 @@
-import React, { useContext } from "react";
-import { Container } from "react-bootstrap";
-import { FixtureContext } from "../data/FixtureContext";
+import React from "react";
+import HomeTeamDetail from "./HomeTeamDetail";
+import AwayTeamDetail from "./AwayTeamDetail";
 
-function MatchDetail(props) {
-  const [fixture, setFixture] = useContext(FixtureContext);
-
+function MatchDetail({ match }) {
   return (
     <div className="match-detail">
-      <p>HomeTeam</p>
-      <p>HomeTeamScore</p>
+      <HomeTeamDetail info={match.homeTeam}></HomeTeamDetail>
       <p>-</p>
-      <p>AwayTeamScore</p>
-      <p>AwayTeam</p>
+      <AwayTeamDetail info={match.awayTeam}></AwayTeamDetail>
     </div>
   );
 }
