@@ -26,12 +26,17 @@ function NavigationBar() {
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="ml-auto">
           <Nav.Link>
+            <Link className="route-link link" to="/">
+              Tüm Maçlar
+            </Link>
+          </Nav.Link>
+          <Nav.Link>
             <Link className="route-link link" to="/canlisonuclar">
               Başlayan & Biten Maçlar
             </Link>
           </Nav.Link>
           <Nav.Link>
-            <Link className="route-link link" to="/fikstür-kalanmaclar">
+            <Link className="route-link link" to="/kalanmaclar">
               Kalan Maçlar
             </Link>
           </Nav.Link>

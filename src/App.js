@@ -24,7 +24,7 @@ function App() {
                 component={MatchResultsScores}
               ></Route>
               <Route
-                path="/fikstür-kalanmaclar"
+                path="/kalanmaclar"
                 exact
                 component={UpcomingMatches}
               ></Route>
