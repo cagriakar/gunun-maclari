@@ -1,6 +1,6 @@
 import React from "react";
-import HomeTeamDetail from "./HomeTeamDetail";
-import AwayTeamDetail from "./AwayTeamDetail";
+import HomeTeamDetail from "./details/HomeTeamDetail";
+import AwayTeamDetail from "./details/AwayTeamDetail";
 
 function MatchDetail({ match }) {
   return (

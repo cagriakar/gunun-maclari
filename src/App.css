@@ -3,24 +3,48 @@
   text-align: center;
 }
 
-body {
+html {
   background-color: #1cc413;
   background-image: url("https://www.transparenttextures.com/patterns/football-no-lines.png");
-  min-height: 100vw;
+  min-height: 100vh;
 }
 
 .App {
   background-color: #1cc413;
   background-image: url("https://www.transparenttextures.com/patterns/football-no-lines.png");
-  min-height: 100vw;
+  min-height: 100vh;
+}
+
+.Navbar {
+  background-color: rgb(22, 22, 22);
+  opacity: 0.8;
+}
+
+.route-link {
+  margin: 1rem;
+}
+
+.link {
+  font-family: "Titillium Web";
+  color: white;
+}
+.link:hover {
+  color: white;
+  text-decoration: none;
 }
 
 .leagues-container {
+  margin-top: 2rem;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
+}
+.league-name {
+  font-family: "Titillium Web";
+  color: black;
+  padding-bottom: 2rem;
 }
 
 .league-card {
@@ -35,25 +59,6 @@ body {
   min-width: 320px;
   opacity: 0.8;
 }
-.league-card:hover {
-  transform: scale(1.05);
-}
-
-h1 {
-  padding: 2rem;
-  font-family: "Titillium Web";
-  color: white;
-}
-
-.Header h2 {
-  color: white;
-}
-
-h2 {
-  padding-bottom: 2rem;
-  font-family: "Titillium Web";
-}
-
 p {
   color: white;
   font-family: "Titillium Web";
@@ -68,10 +73,8 @@ p {
   padding-bottom: 1rem;
   padding-top: 1rem;
   background-color: rgb(22, 22, 22);
-  opacity: 1;
   border-radius: 10px;
 }
-
 .match-detail {
   display: flex;
   flex-wrap: wrap;
