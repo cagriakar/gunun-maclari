@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import { Link } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function NavigationBar() {
   const year = new Date().getFullYear();
@@ -25,20 +26,24 @@ function NavigationBar() {
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="ml-auto">
-          <Nav.Link>
-            <Link className="route-link link" to="/">
-              Tüm Maçlar
-            </Link>
+          <Nav.Link className="route-link link" as={Link} to="/" eventKey="1">
+            Tüm Maçlar
           </Nav.Link>
-          <Nav.Link>
-            <Link className="route-link link" to="/canlisonuclar">
-              Başlayan & Biten Maçlar
-            </Link>
+          <Nav.Link
+            className="route-link link"
+            as={Link}
+            to="/canlisonuclar"
+            eventKey="2"
+          >
+            Başlayan & Biten Maçlar
           </Nav.Link>
-          <Nav.Link>
-            <Link className="route-link link" to="/kalanmaclar">
-              Kalan Maçlar
-            </Link>
+          <Nav.Link
+            className="route-link link"
+            as={Link}
+            to="/kalanmaclar"
+            eventKey="3"
+          >
+            Kalan Maçlar
           </Nav.Link>
         </Nav>
       </Navbar.Collapse>
