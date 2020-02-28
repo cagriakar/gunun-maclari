@@ -1,9 +1,7 @@
 import React, { useState, useEffect, useRef, createContext } from "react";
 import { getMatchInfo } from "../calls/fixtures";
-// import { getMatchInfoWithAxios } from "../calls/fixtures";
 
 const FixtureContext = createContext();
-const today = new Date();
 
 function FixtureProvider(props) {
   const [fixture, setFixture] = useState([]);
@@ -14,13 +12,7 @@ function FixtureProvider(props) {
     getMatchInfo()
       .then(response => {
         if (componentIsMounted.current) {
-          setFixture(
-            response.filter(item =>
-              item.matches.some(
-                match => Number(match.dateTime.slice(8, 10)) === today.getDate()
-              )
-            )
-          );
+          setFixture(response);
         }
       })
       .catch(err => {

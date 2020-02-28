@@ -1,7 +1,6 @@
 /* eslint-disable array-callback-return */
-import React, { useContext } from "react";
+import React, { useContext, useState, useRef, useEffect } from "react";
 import { FixtureContext } from "../../data/FixtureContext";
-import { LoadingContext } from "../../data/LoadingContext";
 import MatchCard from "./MatchCard";
 import Placeholder from "../Placeholder";
 import FadeIn from "react-fade-in";
@@ -9,10 +8,18 @@ import FadeIn from "react-fade-in";
 function LeagueContainer() {
   // eslint-disable-next-line no-unused-vars
   const [fixture, setFixture] = useContext(FixtureContext);
-  // eslint-disable-next-line no-unused-vars
-  const [loading, setLoading] = useContext(LoadingContext);
-
+  const [loading, setLoading] = useState(true);
+  const componentIsMounted = useRef(true);
   const today = new Date();
+
+  useEffect(() => {
+    if (componentIsMounted.current) {
+      setTimeout(() => setLoading(false), 2000);
+    }
+    return () => {
+      componentIsMounted.current = false;
+    };
+  }, []);
 
   return (
     <>

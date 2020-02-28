@@ -1,18 +1,16 @@
 import { load } from "cheerio";
 import jsonframe from "jsonframe-cheerio";
 
+const today = new Date();
+
 async function getMatchInfo() {
   try {
     const response = await fetch(
       "https://cors-anywhere.herokuapp.com/https://www.goal.com/tr/canl%C4%B1-skorlar"
     );
-
     const text = await response.text();
-
     const $ = load(text);
-
     jsonframe($);
-
     const frame = {
       fixture: {
         _s: ".competition-matches",
@@ -44,14 +42,22 @@ async function getMatchInfo() {
         ]
       }
     };
-
     const fixtureList = $(".widget-fixtures-and-results").scrape(frame);
     const { fixture } = fixtureList;
-    return fixture;
+    const filteredFixture = await fixture.filter(
+      item => item.matches.length > 0
+    );
+    const finalFixture = await filteredFixture.filter(item =>
+      item.matches.some(
+        match =>
+          match.dateTime !== undefined &&
+          Number(match.dateTime.slice(8, 10)) === today.getDate()
+      )
+    );
+    return finalFixture;
   } catch (error) {
     console.log(error);
   }
 }
 
 export { getMatchInfo };
-// export { getMatchInfoWithAxios };
