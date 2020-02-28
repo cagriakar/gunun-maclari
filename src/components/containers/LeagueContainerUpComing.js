@@ -24,11 +24,13 @@ function LeagueContainerUpComing() {
   return (
     <>
       {loading ? (
-        <>
+        <div
+          style={{ marginTop: "2rem", marginLeft: "6rem", marginRight: "6rem" }}
+        >
           <Placeholder />
           <Placeholder />
           <Placeholder />
-        </>
+        </div>
       ) : (
         <FadeIn>
           <div className="leagues-container">

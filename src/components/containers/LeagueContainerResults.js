@@ -14,7 +14,7 @@ function LeagueContainerResults() {
 
   useEffect(() => {
     if (componentIsMounted.current) {
-      setTimeout(() => setLoading(false), 2000);
+      setTimeout(() => setLoading(false), 1000);
     }
     return () => {
       componentIsMounted.current = false;
@@ -24,11 +24,13 @@ function LeagueContainerResults() {
   return (
     <>
       {loading ? (
-        <>
+        <div
+          style={{ marginTop: "2rem", marginLeft: "6rem", marginRight: "6rem" }}
+        >
           <Placeholder />
           <Placeholder />
           <Placeholder />
-        </>
+        </div>
       ) : (
         <FadeIn>
           <div className="leagues-container">

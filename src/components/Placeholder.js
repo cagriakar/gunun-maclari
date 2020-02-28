@@ -6,24 +6,18 @@ function Placeholder() {
     <ContentLoader
       speed={1}
       width={320}
-      height={460}
-      viewBox="0 0 320 460"
+      height={300}
+      viewBox="0 0 320 300"
       backgroundColor="#1cc413"
       foregroundColor="#ffffff"
       backgroundOpacity={0}
       foregroundOpacity={0.6}
     >
-      <rect x="66" y="15" rx="3" ry="3" width="161" height="25" />
-      <rect x="115" y="71" rx="3" ry="3" width="66" height="14" />
-      <rect x="48" y="97" rx="3" ry="3" width="60" height="43" />
-      <rect x="129" y="114" rx="3" ry="3" width="35" height="7" />
-      <rect x="121" y="150" rx="3" ry="3" width="53" height="11" />
-      <rect x="187" y="97" rx="3" ry="3" width="60" height="43" />
-      <rect x="114" y="205" rx="3" ry="3" width="66" height="14" />
-      <rect x="48" y="236" rx="3" ry="3" width="60" height="43" />
-      <rect x="189" y="235" rx="3" ry="3" width="60" height="43" />
-      <rect x="130" y="254" rx="3" ry="3" width="35" height="7" />
-      <rect x="122" y="294" rx="3" ry="3" width="53" height="11" />
+      <rect x="60" y="33" rx="3" ry="3" width="200" height="40" />
+      <rect x="135" y="127" rx="3" ry="3" width="50" height="24" />
+      <rect x="41" y="167" rx="3" ry="3" width="90" height="60" />
+      <rect x="140" y="187" rx="3" ry="3" width="40" height="15" />
+      <rect x="189" y="167" rx="3" ry="3" width="90" height="60" />
     </ContentLoader>
   );
 }

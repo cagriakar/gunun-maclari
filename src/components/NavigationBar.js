@@ -27,7 +27,7 @@ function NavigationBar() {
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="ml-auto">
           <Nav.Link className="route-link link" as={Link} to="/" eventKey="1">
-            Tüm Maçlar
+            Ana Sayfa
           </Nav.Link>
           <Nav.Link
             className="route-link link"
