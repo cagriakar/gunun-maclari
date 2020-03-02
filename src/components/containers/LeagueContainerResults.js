@@ -24,9 +24,7 @@ function LeagueContainerResults() {
   return (
     <>
       {loading ? (
-        <div
-          style={{ marginTop: "2rem", marginLeft: "6rem", marginRight: "6rem" }}
-        >
+        <div style={{ marginTop: "2rem" }}>
           <Placeholder />
           <Placeholder />
           <Placeholder />
